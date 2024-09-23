@@ -1,0 +1,44 @@
+name: minosapp
+description: Un nuevo proyecto Flutter para gestión local con SQLite
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  path_provider: ^2.0.11
+  cupertino_icons: ^1.0.2
+  path: ^1.8.3
+
+  # SQLite para almacenamiento local
+  sqflite: ^2.0.0+4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Flutter Lints para buenas prácticas
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/icono_central.png
+    - assets/images/logo_sena.png
+    - assets/images/papel_tapiz.png
+    - assets/images/curva_arriba.png
+    - assets/images/curva_abajo.png
+    - assets/images/compras.png
+    - assets/images/productos.png
+    - assets/images/icono_morado.png
+    - assets/images/ventas.png
+    - assets/images/inicio.png
+    - assets/images/administracion.png
+    - assets/images/clientes.png
+    - assets/images/proveedores.png
+    - assets/images/logo_minos.png
+    - assets/images/user.png
