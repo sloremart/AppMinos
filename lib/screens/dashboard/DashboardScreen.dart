@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:minosapp/screens/customer/CustomerListScreen.dart';
+import 'package:minosapp/screens/group/AddGroupScreen.dart';
+import 'package:minosapp/screens/group/AddSubgroupScreen.dart';
+import 'package:minosapp/screens/product/ProductListScreen.dart';
+import 'package:minosapp/screens/supplier/SupplierListScreen.dart';
+
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({Key? key}) : super(key: key);
 
@@ -16,23 +22,25 @@ class DashboardScreen extends StatelessWidget {
               decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 242, 242, 244),
               ),
-             child: Image.asset(
+              child: Image.asset(
                 'assets/images/logo_minos.png',
-                width:50,
+                width: 50,
                 height: 50,
               ),
             ),
 
-     // Sección de usuario
+            // Sección de usuario
             Container(
               color: Color.fromARGB(116, 123, 86, 136), // Fondo morado
-              padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0),
               child: const Row(
                 children: [
                   // Imagen de perfil del usuario
                   CircleAvatar(
                     radius: 30,
-                    backgroundImage: AssetImage('assets/images/user.png'), // Imagen de perfil
+                    backgroundImage: AssetImage(
+                        'assets/images/user.png'), // Imagen de perfil
                   ),
                   SizedBox(width: 10),
                   // Nombre y rol del usuario
@@ -61,9 +69,6 @@ class DashboardScreen extends StatelessWidget {
             ),
             const Divider(),
 
-
-
-
             ListTile(
               leading: Image.asset(
                 'assets/images/inicio.png',
@@ -76,16 +81,20 @@ class DashboardScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: Image.asset(
-                'assets/images/proveedores.png',
-                width: 30,
-                height: 30,
-              ),
-              title: const Text('Proveedores'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
+  leading: Image.asset(
+    'assets/images/proveedores.png',
+    width: 30,
+    height: 30,
+  ),
+  title: const Text('Proveedores'),
+  onTap: () {
+    // Navega a la pantalla de la lista de proveedores
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => SupplierListScreen()), // Redirige a SupplierListScreen
+    );
+  },
+),
             ListTile(
               leading: Image.asset(
                 'assets/images/productos.png',
@@ -94,7 +103,10 @@ class DashboardScreen extends StatelessWidget {
               ),
               title: const Text('Productos'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProductListScreen()),
+                );
               },
             ),
             ListTile(
@@ -105,7 +117,10 @@ class DashboardScreen extends StatelessWidget {
               ),
               title: const Text('Clientes'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CustomerListScreen()), // Aquí navega a la lista de clientes
+                );
               },
             ),
             ListTile(
@@ -130,16 +145,58 @@ class DashboardScreen extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
-            ListTile(
-              leading: Image.asset(
-                'assets/images/administracion.png',
-                width: 30,
-                height: 30,
-              ),
-              title: const Text('Administraciones'),
-              onTap: () {
-                Navigator.pop(context);
-              },
+     
+            ExpansionTile(
+              leading: Image.asset('assets/images/administracion.png', width: 30, height: 30),
+              title: const Text('Administración'),
+              children: <Widget>[
+                // Tipos de comercio
+                ListTile(
+                  leading: Image.asset('assets/images/tipos_comercio.png', width: 30, height: 30),
+                  title: const Text('Tipos de Comercio'),
+                  onTap: () {
+                    // Aquí puedes navegar a la pantalla correspondiente
+                  },
+                ),
+                // Grupos
+                ListTile(
+                  leading: Image.asset('assets/images/grupos.png', width: 30, height: 30),
+                  title: const Text('Grupos'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AddGroupScreen()),
+                    );
+                  },
+                ),
+                // Subgrupos
+                ListTile(
+                  leading: Image.asset('assets/images/subgrupos.png', width: 30, height: 30),
+                  title: const Text('Subgrupos'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AddSubgroupScreen()),
+                    );
+                  },
+                ),
+                // Unidades
+                ListTile(
+                  leading: Image.asset('assets/images/unidades.png', width: 30, height: 30),
+                  title: const Text('Unidades'),
+                  onTap: () {
+                    // Aquí puedes navegar a la pantalla correspondiente
+                  },
+                ),
+                // Porcentajes de Impuesto
+                ListTile(
+                  leading: Image.asset('assets/images/porcentajes.png', width: 30, height: 30),
+                  title: const Text('Porcentajes de Impuesto'),
+                  onTap: () {
+                    // Aquí puedes navegar a la pantalla correspondiente
+                  },
+                ),
+              ],
             ),
           ],
         ),

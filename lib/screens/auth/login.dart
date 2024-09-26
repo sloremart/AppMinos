@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/papel_tapiz.png'),
+                image: const AssetImage('assets/images/papel_tapiz.png'),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
                   Colors.white.withOpacity(0.9), // Control de la opacidad

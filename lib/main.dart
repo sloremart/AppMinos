@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:minosapp/screens/auth/login.dart';
 import 'package:minosapp/screens/auth/register.dart';
-import 'package:minosapp/screens/dashboard/dashboard_screen.dart';
+import 'package:minosapp/screens/dashboard/DashboardScreen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();  // Inicializar plugins
